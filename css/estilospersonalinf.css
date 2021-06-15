@@ -130,6 +130,15 @@ input:focus~.barra::before{
 }
 
 
+
+.logo{
+    display:block;
+    margin:auto;
+    width: 150px;
+    height: 150px;
+}
+
+
 button{
     font-family: 'roboto';
     background: #673AB7;  

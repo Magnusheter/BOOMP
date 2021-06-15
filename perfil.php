@@ -1,3 +1,18 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['usuario']))
+  {
+    echo'
+      <script>
+        alert("Sesion no iniciada");
+      </script>
+    ';
+      header("location: login.html");
+      session_destroy();  
+      die();
+  }
+?>
 
 
 <!DOCTYPE html>
@@ -163,7 +178,7 @@
   <div class="botones_perfil">
     <a href="">Modificar Informacion</a>
     <a href="">Calificar Bootcamp</a>
-    <a href="" class="CS">Cerrar Sesion</a>
+    <a href="php/cerrar_sesion.php" class="CS">Cerrar Sesion</a>
   </div>
 
   <div class="attribution">

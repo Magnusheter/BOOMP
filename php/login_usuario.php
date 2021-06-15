@@ -13,8 +13,8 @@
 
     if(mysqli_num_rows($val_login) > 0)
     {
-        //$_SESSION['us_correo']=$lo_correo;
-        header("location:../perfil.html");
+        $_SESSION['usuario']=$lo_correo;
+        header("location:../perfil.php");
         exit;
     }
     else

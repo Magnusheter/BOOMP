@@ -21,7 +21,7 @@
                     <a href="#espec">Especialidades</a>
                     <a href="#servicios">Servicios</a>
                     <a href="#contacto">Contacto</a>
-                    <a href="login.html">Inicio de sesion</a>
+                    <a href="perfil.php">Perfil</a>
                 </nav>
             </div>
         </section>
@@ -183,10 +183,11 @@
             </div>
             <div class="content-foo">
                 <h4>Instagram</h4>
-                <p>boomp.oficial</p>
+                <p>boomp.oficial</p><a href="php/cerrar_sesion.php">...</a>
             </div>
         </div>
         <h2 class="titulo-final">&copy; LOS SIMULADORES</h2>
+        
     </footer>
 </body>
 
