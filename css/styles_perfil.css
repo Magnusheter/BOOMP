@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+:root{
+    --Darkcyan: hsl(185, 75%, 39%);
+    --Verydarkdesaturatedblue: hsl(229, 23%, 23%);
+    --Darkgrayishblue: hsl(227, 10%, 46%);
+    --Darkgray: hsl(0, 0%, 59%);
+}
+body{
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.container{
+    margin: 50px auto 3px;
+    width: 660px; 
+    height: 1000px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;    
+    
+}
+
+input{   /*Para escribir*/
+    background: none;
+    color: #c6c6c6;
+    font-size: 10px;
+    padding-top: 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+
+.bubbles{  /*Caja superior*/
+    height: 240px;
+    background: url(../img/Circulo.png);
+}
+.photo{
+    position:absolute;
+    top: 15px; 
+    left: 225px; /*Izquierda*/
+    
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 200px;  /*altura, tamaño foto*/
+    overflow: hidden;
+}
+
+header{
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+.form-group{
+    font-weight: 700;
+    color: var(--Verydarkdesaturatedblue);
+    justify-content:flex-end /**/
+}
+
+.form-group-1
+{
+    font-weight: 900;
+    font-size: 40px;
+    color: var(--Verydarkdesaturatedblue);
+    justify-content:flex-end /**/
+}
+
+
+.statscontainer{  /*Caja*/
+    background-color: white;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    /*align-items: center;*/
+    border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+.statscontainer2{  /*Caja Informacion*/
+    background-color: white;
+    height: 15px;
+    display: flex;
+    flex: start; /**/
+    padding: 10px;
+    text-align: right;
+    justify-content:flex-start;
+   /* text-align: center;*/
+    /*align-items: center;*/
+    border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+.statscontainerrr{  /*Caja TITULOOOS*/
+    background-color: white;
+    padding-top: 5px;
+    height: 25px;
+    display: flex;
+    flex: start; /**/
+    justify-content: space-around;
+    text-align: right;
+    
+    
+   /* text-align: center;*/
+    /*align-items: center;*/
+    border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+
+
+.fotos{
+    width: 95%;  /*ancho*/
+    height: 95%; /*alto*/
+    text-align: center;
+  /* background-color: cornsilk;*/
+    font-size: 15px;
+    text-decoration: none; /*Quitar busrallado*/
+    /*background-color: powderblue;*/
+    font-family: 'Oxygen', sans-serif;
+
+}
+
+.statistics{
+   text-align: center;
+}
+.quantity{
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--Verydarkdesaturatedblue);
+}
+.units{
+    font-weight: 400;
+    font-size: 0.6em;
+    color: var(--Darkgray);
+    letter-spacing: 2px;
+}
+
+.botones_perfil
+{
+    font-size: 25px;
+    padding-left: 24%;
+    padding-right: 20%;
+    padding-bottom: 30px;
+    padding-top: 1%;
+}
+
+.botones_perfil a
+{
+    
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+}
+
+.botones_perfil .CS
+{
+    background-color: darkred;
+}
+
+*
+{
+    font-family: 'Oxygen', sans-serif;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 1440px){
+    .container{
+        width: 380px;
+    }
+}
+

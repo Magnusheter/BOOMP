@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles_perfil.css">
+  <title>Frontend Mentor | Profile card component</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="bubbles"></div>  <!--Portada-->
+  
+    <div class="photo">
+      <img src="img/usuario.jpg" alt="" width="100%" height="100%">
+    </div>
+    <?php
+   
+    include 'php/conexion_be.php';
+    $o_nombre="coconauta";
+    $info_perfil = mysqli_query($conexion, "SELECT estado FROM user_Data WHERE nombre = '$o_nombre'");
+    echo $o_nombre;
+
+    // if($info_perfil)
+    // {
+    //     echo"Conculta exitosa";
+        
+    //     echo $estado_o;
+    // }
+    // else{
+    //     echo"Añlgo salio mal";
+    // }
+
+    $valores = mysqli_fetch_array($info_perfil);
+    $estado_o = $valores['estado'];
+
+
+?>
+    <form action="php/da_perfil.php">
+    <header>  <!--Caja Superior--> 
+       
+        <span class="form-group"><div class="quantity"><input type="text" name="pe_nombre"><span class="barra"></span></div></span>
+        <div class="form-group">
+          <H2><?php echo $estado_o, $o_nombre;?></H2>
+        </div>
+    </header>                               <!--Caja Superior FIN-->
+  
+    <div class="statscontainer">   <!----------- Caja inf ------------------>
+      <div class="statistics">
+        <div class="quantity"><input type="text" name="tomados"><span class="barra"></span></div>
+        <div class="units">Cursos tomados</div>
+      </div>
+    
+      <div class="statistics">
+        <div class="quantity"><input type="text" name="actuales"><span class="barra"></span></div>
+        <div class="units">Cursos Actuales</div>
+      </div>
+    
+      <div class="statistics">
+        <div class="quantity"><input type="text" name="tomar"><span class="barra"></span></div>
+        <div class="units">Cursos por tomar</div>
+      </div>
+    </div>   <!-----------------------------Caja inf FIN------------------------------>
+
+
+    <div class="statscontainer2"> <!--3ra caja, datos personales--> 
+      Correo electronico    :  
+      <div class="form-group">  <input type="text" name="correo"><span class="barra"></span> </div>
+    </div>  
+    <div class="statscontainer2"> <!--3ra caja, datos personales--> 
+    Genero :   
+      <div class="form-group"> <input type="text" name="genero"><span class="barra"></span></div>
+    </div>
+    <div class="statscontainer2"> <!--3ra caja, datos personales--> 
+      Edad :  
+      <div class="form-group"> <input type="text" name="edad"><span class="barra"></span></div>
+    </div>
+
+    <div class="statscontainerrr">      <!--APARTADO DIRECCIÓN-->    
+      <div class="form-group"> DIRECCIÓN </div>
+    </div>
+        
+    <div class="statscontainer2"> 
+      Calle :  
+      <div class="form-group"> <input type="text" name="calle"><span class="barra"></span></div>
+    </div>
+    
+    <div class="statscontainer2"> 
+      Colonia :  
+      <div class="form-group"> <input type="text" name="colonia"><span class="barra"></span></div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Numero int. :
+      <div class="form-group"> <input type="text" name="correo"><span class="NumInt"></span></div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Numero ext. : 
+      <div class="form-group"> <input type="text" name="NumExt"><span class="barra"></span></div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Estado :  
+      <div class="form-group"> <input type="text" name="estado"><span class="barra"></span></div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Municipio :  
+      <div class="form-group"> <input type="text" name="municipio"><span class="barra"></span></div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Código Postal :  
+      <div class="form-group"> <input type="text" name="CodPost"><span class="barra"></span></div>
+    </div>
+
+    <div class="statscontainerrr">      <!--APARTADO ESTUDIOS-->    
+      <div class="form-group"> ESTUDIOS </div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Nivel de estudios :  
+      <div class="form-group"> <input type="text" name="estudios"><span class="barra"></span> </div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Carrera :  
+      <div class="form-group"> <input type="text" name="carrera"><span class="barra"></span> </div>
+    </div>
+
+    <div class="statscontainer2"> 
+      Institución :  
+      <div class="form-group"> <input type="text" name="instituto"><span class="barra"></span> </div>
+    </div>
+
+    
+  </form>
+  </div>
+
+  <div class="attribution">
+    Bootcamp: 
+    Coded by Equipo Simuladores <br>
+    <br>
+    </a>.
+  </div>
+</body>
+</html>

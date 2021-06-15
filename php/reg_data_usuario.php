@@ -1,0 +1,82 @@
+<?php
+
+    include 'conexion_be.php';
+
+    $da_nombre =$_POST['da_nombre'];
+    $da_app =$_POST['da_app'];
+    $da_apm =$_POST['da_apm'];
+    $da_genero =$_POST['da_genero'];
+    $da_edad =$_POST['da_edad'];
+    $da_calle =$_POST['da_calle'];
+    $da_ni =$_POST['da_ni'];
+    $da_ne =$_POST['da_ne'];
+    $da_colonia =$_POST['da_colonia'];
+    $da_estado =$_POST['da_estado'];
+    $da_municipio =$_POST['da_municipio'];
+    $da_cp =$_POST['da_cp'];
+    $da_nivel =$_POST['da_nivel'];
+    $da_carrera =$_POST['da_carrera'];
+    $da_escuela =$_POST['da_escuela'];
+
+
+    $query = "INSERT INTO   user_Data(
+                            nombre,
+                            apellido_P,
+                            apellido_M,
+                            genero,
+                            edad,
+                            calle,
+                            numero_int,
+                            numero_ext,
+                            colonia,
+                            estado,
+                            municipio,
+                            codigo_Postal,
+                            nivel_Estudios,
+                            carrera_A,
+                            institucion)
+                
+                    VALUES( '$da_nombre',
+                            '$da_app',
+                            '$da_apm',
+                            '$da_genero',
+                            '$da_edad',
+                            '$da_calle',
+                            '$da_ni',
+                            '$da_ne',
+                            '$da_colonia',
+                            '$da_estado',
+                            '$da_municipio',
+                            '$da_cp',
+                            '$da_nivel',
+                            '$da_carrera',
+                            '$da_escuela')";
+
+
+
+    $guardar = mysqli_query($conexion, $query);
+
+
+    //echo"$da_nombre,$da_app,$da_apm,$da_genero,$da_edad,$da_calle,$da_ni,$da_ne,$da_colonia,$da_estado,$da_municipio,$da_cp,$da_nivel,$da_carrera,$da_escuela";
+
+//     if($conexion)
+// {
+//     echo'Conectado exitosamente a la base';
+// }
+// else{
+//     echo 'No se ha podido conectar';
+// }
+
+
+
+    if($guardar)
+    {
+        header("location:../perfil.php");
+    }
+    else{
+        echo '"Error al ingresar los datos";
+        ';
+    }
+
+
+?>
