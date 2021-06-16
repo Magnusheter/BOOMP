@@ -1,19 +1,3 @@
-<?php
-  session_start();
-
-  if(!isset($_SESSION['usuario']))
-  {
-    echo'
-      <script>
-        alert("Sesion no iniciada");
-      </script>
-    ';
-      header("location: login.html");
-      session_destroy();  
-      die();
-  }
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +21,16 @@
 
     <!-- Llamado a la BD para mostrar la hoja de vida -->
     <?php
+    session_start();
       include 'php/conexion_be.php';
-      $o_nombre="Mario";
-      $info_perfil = mysqli_query($conexion, "SELECT * FROM user_Data WHERE nombre = '$o_nombre'");
-      $info_perfil_usu = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usu_nombre = '$o_nombre'");
+      
+      $o_nombre=$_SESSION['usuario'];
+  //  $info_perfil = mysqli_query($conexion, "SELECT * FROM user_Data INNER JOIN usuario on user_Data.nombre=usuarios.usu_nombre WHERE usuarios.usu_correo = '$o_nombre'");
+      $info_perfil = mysqli_query($conexion, "SELECT * FROM user_data INNER JOIN usuarios on user_data.nombre = usuarios.usu_nombre WHERE usuarios.usu_correo = '$o_nombre'");
+      
+      $info_perfil_usu = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usu_correo = '$o_nombre'");
+      
+      
 
       // echo $o_nombre;
 
@@ -78,6 +68,9 @@
     ?>
     <form action="php/da_perfil.php">
     <header>  <!--Caja Superior--> 
+        <div>
+          <a class="bt-reg" href="index.html">Inicio</a>
+        </div>
         <span class="form-group"><div class="quantity"><input type="text" name="pe_nombre"><span class="barra"></span></div></span>
         <div class="form-group-1">
           <?php echo $nombre." ".$app." ".$apm;?>

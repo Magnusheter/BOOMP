@@ -55,8 +55,7 @@
 
 
     $guardar = mysqli_query($conexion, $query);
-
-
+    
     //echo"$da_nombre,$da_app,$da_apm,$da_genero,$da_edad,$da_calle,$da_ni,$da_ne,$da_colonia,$da_estado,$da_municipio,$da_cp,$da_nivel,$da_carrera,$da_escuela";
 
 //     if($conexion)
