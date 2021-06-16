@@ -15,11 +15,39 @@
 
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/script.js"></script>
+
+	<!-- Incluir jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Definir la función de puntuación -->
+<script type="text/javascript">
+function ratestar($id, $puntuacion){
+	$.ajax({
+		type: 'GET',
+		url: 'votaciones.php',
+		data: 'votarElemento='+$id+'&puntuacion='+$puntuacion,
+		success: function(data) {
+			alert(data);
+			location.reload();
+		}
+	});
+}
+</script>
 </head>
+<style type="text/css">
+	.estrellas {text-shadow: 0 0 1px #F48F0A; cursor: pointer;  font-size: 60px;}
+	.estrella_dorada { color: gold; font-size: 60px;}
+	.estrella_normal { color: black; font-size: 60px;}
+</style>
 
 <body>
-	
-	
+<?php
+// Incluir la clase Votacion desde el fichero votaciones.php
+include 'php/votaciones.php';
+
+// Activar un objeto de trabajo
+$V = new Votacion();
+?>
 	<div class="wrap">
 
 		<div class="ctnt" id="modal-1">
@@ -68,7 +96,17 @@
 					<br>
 					<h2>Modalidad</h2>
 					<p>En línea</p>
+					<div>
+					</div>
+					
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.coursera.org/learn/arduino-aplicaciones" target="_blank">INSCRIBIRME</a>
 						
@@ -119,6 +157,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.udemy.com/course/master-maker-realiza-proyectos-con-arduino-de-0-a-maker/" target="_blank">INSCRIBIRME</a>
 						
@@ -179,6 +224,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.hackaboss.dev/bootcamp-kids" target="_blank">INSCRIBIRME</a>
 						
@@ -246,6 +298,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.coursera.org/learn/robotica-inicial" target="_blank">INSCRIBIRME</a>
 						
@@ -281,6 +340,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://n9.cl/a6k7j" target="_blank">INSCRIBIRME</a>
 						
@@ -337,6 +403,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://stacksocial.com/sales/the-complete-matlab-programming-certificationbundle?
 						
@@ -385,6 +458,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.developer-bootcamp.com/c-programmer.htm" target="_blank">INSCRIBIRME</a>
 						
@@ -421,6 +501,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="http://www.formadoresit.es/formacion-en-empresas/formacion/meanstack/
 						
@@ -464,6 +551,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://codingnomads.co/courses/python-bootcamp-online/" target="_blank">INSCRIBIRME</a>
 						
@@ -511,6 +605,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.agitraining.com/adobe/illustrator/classes/illustrator-bootcamp" target="_blank">INSCRIBIRME</a>
 						
@@ -555,6 +656,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.creativelive.com/class/adobe-photoshop-cc-bootcamp-blake-rudis" target="_blank">INSCRIBIRME</a>
 						
@@ -595,6 +703,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://cutt.ly/0b3EWO7" target="_blank">INSCRIBIRME</a>
 						
@@ -632,6 +747,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://lemoncode.net/bootcamp-backend#bootcamp-backend/docentes" target="_blank">INSCRIBIRME</a>
 						
@@ -679,7 +801,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.794565041354!2d-99.16531808561803!3d19.421280246076336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3746a2e079%3A0x422fa4858844d058!2sTonal%C3%A1%2010%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622589951595!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://www.ironhack.com/es/desarrollo-web" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -728,7 +857,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.783589475123!2d-3.7037806851047583!3d40.43579066240487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228f50ac57657%3A0x60b00d2d2cd7971b!2sCalle%20de%20Viriato%2C%2020%2C%2028010%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2smx!4v1622590712917!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://www.skylabcoders.com/es/full-time-format-bootcamp-barcelona_5278" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -778,6 +914,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.udemy.com/course/bootcamp-de-desarrollo-web/?utm_source=adwords&utm_medium=udemyads&utm_campaign=DSA-WebIndex_la.ES_cc.MX&utm_content=deal4584&utm_term=_._ag_124787779331_._ad_504973666492_._kw__._de_c_._dm__._pl__._ti_dsa-1052284100117_._li_9073830_._pd__._&matchtype=b&gclid=CjwKCAjw1uiEBhBzEiwAO9B_HSVyj00dY-_blk6X15LJwrsww9S5t1qxszXNqOvp1nozNHTBKj1l1RoCqpgQAvD_BwE" target="_blank">INSCRIBIRME</a>
 						
@@ -845,6 +988,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://devf.la/master/design/mx?utm_source=google&utm_medium=search&utm_term=curso%20de%20dise%C3%B1o%20ux&utm_campaign=Master+UX/UI+Gen+6&utm_source=adwords&utm_medium=ppc&hsa_acc=9274428682&hsa_cam=12702112993&hsa_grp=120015419189&hsa_ad=512949372888&hsa_src=g&hsa_tgt=kwd-304541476749&hsa_kw=curso%20de%20dise%C3%B1o%20ux&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw1uiEBhBzEiwAO9B_HR_Xx2WxXtSSD3H8qTbskvirufW2IeqgzSJ33dkgRbeC6URKWAhtZBoCjmwQAvD_BwE" target="_blank">INSCRIBIRME</a>
 						
@@ -910,6 +1060,13 @@
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.794682184702!2d-99.16531808509349!3d19.421275186890668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3746a2e079%3A0x422fa4858844d058!2sTonal%C3%A1%2010%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622600811815!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.ironhack.com/es/ciberseguridad" target="_blank">INSCRIBIRME</a>
 						
@@ -964,6 +1121,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://bootcamp.geekshubsacademy.com/online/ciberseguridad/" target="_blank">INSCRIBIRME</a>
 						
@@ -1025,6 +1189,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.neoland.es/cybersecurity-bootcamp?c=online" target="_blank">INSCRIBIRME</a>
 						
@@ -1101,6 +1272,13 @@
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.472896536404!2d-99.19312968509328!3d19.43516768688292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20200a407dc1b%3A0xcbcd423cfcdaef6f!2sTraveline.mx!5e0!3m2!1ses-419!2smx!4v1622602548709!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.iicybersecurity.com/ciberseguridad.html" target="_blank">INSCRIBIRME</a>
 						
@@ -1156,6 +1334,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://keepcoding.io/nuestros-bootcamps/bootcamp-en-ciberseguridad/" target="_blank">INSCRIBIRME</a>
 						
@@ -1201,6 +1386,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://ingenieria.uai.cl/diplomado/diplomado-en-inteligencia-artificial/" target="_blank">INSCRIBIRME</a>
 						
@@ -1247,6 +1439,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href=" https://uvm.mx/oferta-academica/diplomados-certificaciones/tecnologia-y-sistemas-en-linea-diplomados-y-certificaciones/inteligencia-artificial-diploma-en-linea" target="_blank">INSCRIBIRME</a>
 						
@@ -1302,6 +1501,13 @@
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.0760295651185!2d-99.16489908561888!3d19.36586034783076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffbeb4235093%3A0xbe4ce3096afe2931!2sAv.%20Cuauht%C3%A9moc%201461%2C%20Sta%20Cruz%20Atoyac%2C%20Benito%20Ju%C3%A1rez%2C%2003310%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622606529463!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://www.educaweb.mx/curso/diplomado-inteligencia-artificial-distrito-federal-363090/" target="_blank">INSCRIBIRME</a>
 						
@@ -1356,7 +1562,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.794565041354!2d-99.16531808561803!3d19.421280246076336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3746a2e079%3A0x422fa4858844d058!2sTonal%C3%A1%2010%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622607463738!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://www.ironhack.com/es/data-analytics" target="_blank">INSCRIBIRME</a>
 						
 					</button>	
@@ -1402,6 +1615,13 @@
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://bedu.org/cursos/data-analysis/?utm_source=SEM&utm_medium=DataAnalysis&utm_campaign=cdmx_da&utm_source=adwords&utm_medium=ppc&utm_campaign=Leads+Data+Analysis&utm_term=curso%20analisis%20de%20datos&hsa_ver=3&hsa_mt=b&hsa_cam=9655535507&hsa_net=adwords&hsa_grp=102192179467&hsa_acc=3416616974&hsa_src=g&hsa_kw=curso%20analisis%20de%20datos&hsa_tgt=kwd-296484864906&hsa_ad=426499756226&gclid=CjwKCAjw7diEBhB-EiwAskVi16q-1VlgoQJ-OVMAJi_AGLik-UO-MODTU2CCxJFaQlbbg_5NMRnLyhoC7WIQAvD_BwE" target="_blank">INSCRIBIRME</a>
 						
@@ -1454,6 +1674,13 @@
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.151302845623!2d-3.693811385104298!3d40.44978806155307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4229189dbac4db%3A0x5400e56fb9abf5b1!2sIMMUNE%20Technology%20Institute!5e0!3m2!1ses-419!2smx!4v1622607991989!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
 					<button class="testbutton">
 						<a href="https://immune.institute/data-analytics/" target="_blank">INSCRIBIRME</a>
 						
@@ -1494,7 +1721,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622609326745!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/bootcamp-cloud-architect-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -1534,7 +1768,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622609608996!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/cloud-developer-azure/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -1577,7 +1818,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622610145762!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/security-specialist-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>	
@@ -1614,7 +1862,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622610445274!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/security-specialist-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -1654,7 +1909,14 @@
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622610928037!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<button class="testbutton">
+					<?php
+						// Mostrar la valoración media
+						echo '<p>Valoración media: '.$V->obtener_la_puntuacion_de(1).'</p>';
+
+						// Mostrar las estrellas
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/bootcamp-cloud-sre-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>

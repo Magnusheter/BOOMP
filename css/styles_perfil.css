@@ -45,13 +45,19 @@ input{   /*Para escribir*/
     position:absolute;
     top: 15px; 
     left: 225px; /*Izquierda*/
-    
     border: 5px solid white;
     border-radius: 50%;
+    background-color: aliceblue;
     height: 200px;  /*altura, tamaño foto*/
+    width: 200px;
     overflow: hidden;
 }
-
+.avatar
+{
+    height: 200px;  /*altura, tamaño foto*/
+    width: 200px;
+    border-radius: 50%;
+}
 header{
     height: 100px;
     background-color: white;

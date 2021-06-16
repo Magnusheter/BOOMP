@@ -12,16 +12,8 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="bubbles"></div>  <!--Portada-->
-  
-    <div class="photo">
-      <img src="img/usuario.jpg" alt="" width="100%" height="100%">
-    </div>
-
-
-    <!-- Llamado a la BD para mostrar la hoja de vida -->
-    <?php
+<!-- Llamado a la BD para mostrar la hoja de vida -->
+<?php
     session_start();
       include 'php/conexion_be.php';
       
@@ -65,8 +57,19 @@
       $nivel = $valores['nivel_Estudios'];
       $carrera = $valores['carrera_A'];
       $institucion = $valores['institucion'];
+      $foto = $valores['foto'];
 
     ?>
+
+  <div class="container">
+    <div class="bubbles"></div>  <!--Portada-->
+  
+    <div class="photo">
+      <img class="avatar" src="php/<?php echo $foto; ?>" alt="">
+    </div>
+
+
+    
     <form action="php/da_perfil.php">
     <header>  <!--Caja Superior--> 
         <div>

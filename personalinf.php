@@ -12,7 +12,7 @@
     <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-    <form action="php/reg_data_usuario.php" id="form" method="POST">
+    <form action="php/reg_data_usuario.php" id="form" method="POST" enctype="multipart/form-data">
         <div class="form">
             <div>
                 <div class="logo-div">
@@ -23,8 +23,8 @@
             </div>
             <div class="grupo">
                 <h2>Foto de perfil</h2>
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="200" width="200" alt="img" class="avatar">
-                <input type="file" onchange="previewFile()" class="button" id="insertar"><br>
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="200" width="200"  alt="img" class="avatar">
+                <input type="file" onchange="previewFile()" class="button" id="insertar" name="da_foto"><br>
             </div>
             <div class="grupo">
                 <input type="text" id="name" name="da_nombre" required placeholder="Nombre"><span class="barra"></span>

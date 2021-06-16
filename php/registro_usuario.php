@@ -50,7 +50,7 @@
     {
         echo'
         <script>
-                                                        
+                                                
             window.location = "../personalinf.php";
         </script>
         ';

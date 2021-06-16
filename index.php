@@ -74,7 +74,7 @@
                         <div class="hover-galeria">
                             <img src="img/icono2.png" alt="">
                             <br>
-                            <a href="categorias.php"></a><p>Ciberseguridad</p></a>
+                            <a href="categorias.php#Programacion"><p>Ciberseguridad</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
@@ -82,7 +82,7 @@
                         <div class="hover-galeria">
                             <img src="img/icono4.png" alt="">
                             <br>
-                            <a href="categorias.php"><p>Programación</p></a>
+                            <a href="categorias.php#Programacion"><p>Programación</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
