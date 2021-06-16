@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +70,7 @@
     <form action="php/da_perfil.php">
     <header>  <!--Caja Superior--> 
         <div>
-          <a class="bt-reg" href="index.html">Inicio</a>
+          <a class="bt-reg" href="index.php">Inicio</a>
         </div>
         <span class="form-group"><div class="quantity"><input type="text" name="pe_nombre"><span class="barra"></span></div></span>
         <div class="form-group-1">

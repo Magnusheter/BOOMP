@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1675,7 +1679,7 @@
 				<a href="#InteArti" class="category_item" category="InteArti">Inteligencia Artificial</a>
 				<a href="#Analist" class="category_item" category="Analist">Analista de Datos</a>
 				<a href="#Nube" class="category_item" category="Nube">Servicios de la Nube</a>
-				<a href="index.html" class="category_item" category="Regreso">Regresar al Inicio</a>
+				<a href="index.php" class="category_item" category="Regreso">Regresar al Inicio</a>
 			</div>
 			<section class="products-list">
 				<!--ARDUINO-->

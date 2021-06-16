@@ -16,7 +16,7 @@
         <div class="form">
             <div>
                 <div class="logo-div">
-                    <a href="login.html"><img src="img/LOGO V4.PNG"  alt="Inicio" class="logo"></a>
+                    <a href="login.php"><img src="img/LOGO V4.PNG"  alt="Inicio" class="logo"></a>
 
                 </div>
                 <h1><br>Datos Personales</h1>
