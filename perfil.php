@@ -78,8 +78,8 @@
         </div>
     </header>                                <!--Caja Superior FIN-->
   
-    <div class="statscontainer">   <!----------- Caja inf ------------------>
-      <div class="statistics">
+    <!-- <div class="statscontainer">   --------- Caja inf ---------------- -->
+      <!-- <div class="statistics">
         <div class="quantity"><input type="text" name="tomados"><span class="barra"></span></div>
         <div class="units">Cursos tomados</div>
       </div>
@@ -92,8 +92,8 @@
       <div class="statistics">
         <div class="quantity"><input type="text" name="tomar"><span class="barra"></span></div>
         <div class="units">Cursos por tomar</div>
-      </div>
-    </div>   <!-----------------------------Caja inf FIN------------------------------>
+      </div> -->
+    <!-- </div>   ---------------------------Caja inf FIN---------------------------- -->
 
 
     <div class="statscontainer2"> <!--3ra caja, datos personales--> 
@@ -166,14 +166,15 @@
       Institución :  <?php echo $institucion;?>
       <div class="form-group"> <input type="text" name="instituto"><span class="barra"></span> </div>
     </div>
-  </form>
-  </div>
-      
+  </form> 
   <div class="botones_perfil">
     <a href="">Modificar Informacion</a>
     <a href="">Calificar Bootcamp</a>
     <a href="php/cerrar_sesion.php" class="CS">Cerrar Sesion</a>
   </div>
+   </div>
+      
+  
 
   <div class="attribution">
     Bootcamp: 

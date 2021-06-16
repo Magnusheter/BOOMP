@@ -23,7 +23,7 @@
             </div>
             <div class="grupo">
                 <h2>Foto de perfil</h2>
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="200" alt="img" class="avatar">
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="200" width="200" alt="img" class="avatar">
                 <input type="file" onchange="previewFile()" class="button" id="insertar"><br>
             </div>
             <div class="grupo">

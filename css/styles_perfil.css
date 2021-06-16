@@ -142,16 +142,27 @@ header{
     letter-spacing: 2px;
 }
 
-
+.botones_perfil
+{
+    font-size: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .botones_perfil a
 {
     
     text-decoration: none;
     padding: 20px;
+    font-size: 20px;
     border-radius: 5px;
     background-color: darkblue;
     color: white;
+    margin-left: 15px;
+    
+
 }
 
 .botones_perfil .CS
@@ -169,18 +180,11 @@ header .bt-reg a
     border-radius: 2px;
     background: url(../img/Circulo.png);
     font-size: 12 px;
-    padding: 10px;
+    padding: 20px;
     color: white;
 }
 
-.botones_perfil
-{
-    font-size: 10px;
-    padding-left: 24%;
-    padding-right: 20%;
-    padding-bottom: 30px;
-    padding-top: 1%;
-}
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
