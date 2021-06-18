@@ -171,8 +171,7 @@
     </div>
   </form> 
   <div class="botones_perfil">
-    <a href="">Modificar Informacion</a>
-    <a href="">Calificar Bootcamp</a>
+    <a href="php/personalinf2.php">Modificar Informacion</a>
     <a href="php/cerrar_sesion.php" class="CS">Cerrar Sesion</a>
   </div>
    </div>

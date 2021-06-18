@@ -96,8 +96,10 @@
 
     if($guardar)
     {   
-        
-        header("location:../login.php");
+        echo'<script type="text/javascript">
+        alert("Usuario registrado de manero exitosa");
+        window.location.href="../login.php";
+        </script>';
     }
     else{
         echo '"Error al ingresar los datos";

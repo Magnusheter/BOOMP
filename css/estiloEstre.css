@@ -1,0 +1,86 @@
+body{  /*Fondo*/
+    background: #4568DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 50px;
+
+  }
+  
+  .clasificacion input {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+    font-size: 50px;
+    text-align: left;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: embed;
+
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  .clasificacion input:checked ~ label {
+    color: orange;
+  }
+
+.val_votacion h3
+{
+  color: gold;
+  text-decoration: indigo;
+}
+
+/* . button
+{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 10px;
+  background-color: gold;
+  border-radius: 5px;
+  border: white 3px solid;
+  margin: 0;
+  color: black;
+  cursor: pointer;
+} */
+
+.val_votacion button:hover {
+	color: black !important;
+	background: #468CCF;
+	background: linear-gradient(to top, #468CCF, #63B8EE);
+  }
+
+  .val_votacion button  {
+	align-items: center;
+	font-weight: bold;
+	color: gold !important;
+	font-size: 18px;
+	text-shadow: 1px 1px 0px #2E9AA6;
+	box-shadow: 1px 1px 1px #BEE2F9;
+	padding: 10px 25px;
+	border-radius: 10px;
+	border: 1px solid #5D5E5E; 
+	background: #EEEEEE;
+  }

@@ -1,17 +1,5 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['usuario']))
-	{
-		?>
-		<style type="text/css">
-			
-			.val_votacion {display: none;}
-			
-		</style>
-		
-		<?php
-		session_destroy();
-	}
 	
 ?>
 
@@ -23,13 +11,6 @@
 	<title>Filtrando elementos por categorias</title>
 
 	<link rel="stylesheet" href="css/estilos.css">
-
-	<!-- PARA EL CALIFICACION -->
-
-	<link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/estiloEstre.css">
-
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet"> 
 
@@ -75,13 +56,6 @@ $V = new Votacion();
 				<div class="img-2"></div>
 				<div class="text">
 					<h1 class="title">Arduino y Algunas Aplicaciones</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(1);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Coursera/UNAM</p>
@@ -123,59 +97,32 @@ $V = new Votacion();
 					<br>
 					<h2>Modalidad</h2>
 					<p>En línea</p>
-
-					<br>	
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="1" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.1" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.1">★</label><!--
-									  --><input  id="radio2.1" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.1">★</label><!--
-									  --><input  id="radio3.1" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.1">★</label><!--
-									  --><input  id="radio4.1" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.1">★</label><!--
-									  --><input  id="radio5.1" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.1">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
+					<div>
 					</div>
+					
+					<br><br>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.coursera.org/learn/arduino-aplicaciones" target="_blank">INSCRIBIRME</a>
+						
 					</button>	
-					<br>
 					<br><br>
 					
 				</div>
 				<a href="#" class="btn-cerrar-popup"> x</a>
 			</div>
 		</div>
-		<?php
-		$V2 = new Votacion();
-		?>
+
 		<div class="ctnt" id="modal-2">
 			<div class="popup">
 				<div class="img-2"></div>
 				<div class="text">
 					<h1>Master & Maker. Realiza proyectos con Arduino. De 0 a Maker!</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V2->mostrar_estrellitas_para(2);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Udemy</p>
@@ -210,32 +157,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="2" name="id" class="info1">
-							<input type="text" value="Master & Maker. Realiza proyectos con Arduino. De 0 a Maker!" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  	 <input  id="radio1.2" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.2">★</label><!--
-									  --><input  id="radio2.2" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.2">★</label><!--
-									  --><input  id="radio3.2" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.2">★</label><!--
-									  --><input  id="radio4.2" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.2">★</label><!--
-									  --><input  id="radio5.2" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.2">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.udemy.com/course/master-maker-realiza-proyectos-con-arduino-de-0-a-maker/" target="_blank">INSCRIBIRME</a>
 						
@@ -252,13 +179,6 @@ $V = new Votacion();
 				<div class="img-2"></div>
 				<div class="text">
 					<h1>My Robotic Friends</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(3);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">HACK A BOSS kids</p>
@@ -303,32 +223,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="3" name="id" class="info1">
-							<input type="text" value="My Robotic Friends" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.3" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.3">★</label><!--
-									  --><input  id="radio2.3" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.3">★</label><!--
-									  --><input  id="radio3.3" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.3">★</label><!--
-									  --><input  id="radio4.3" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.3">★</label><!--
-									  --><input  id="radio5.3" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.3">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.hackaboss.dev/bootcamp-kids" target="_blank">INSCRIBIRME</a>
 						
@@ -346,13 +246,6 @@ $V = new Votacion();
 				<div class="img-2"></div>
 				<div class="text">
 					<h1>Robótica</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(4);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Coursera/UNAM</p>
@@ -403,32 +296,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="4" name="id" class="info1">
-							<input type="text" value="Empresa/Organización que lo imparte" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.4" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.4">★</label><!--
-									  --><input  id="radio2.4" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.4">★</label><!--
-									  --><input  id="radio3.4" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.4">★</label><!--
-									  --><input  id="radio4.4" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.4">★</label><!--
-									  --><input  id="radio5.4" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.4">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.coursera.org/learn/robotica-inicial" target="_blank">INSCRIBIRME</a>
 						
@@ -445,13 +318,6 @@ $V = new Votacion();
 				<div class="img-1"></div>
 				<div class="text">
 					<h1>Programación Web</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(5);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">BEDU</p>
@@ -471,32 +337,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="5" name="id" class="info1">
-							<input type="text" value="Programación Web" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  	 <input  id="radio1.5" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.5">★</label><!--
-									  --><input  id="radio2.5" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.5">★</label><!--
-									  --><input  id="radio3.5" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.5">★</label><!--
-									  --><input  id="radio4.5" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.5">★</label><!--
-									  --><input  id="radio5.5" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.5">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://n9.cl/a6k7j" target="_blank">INSCRIBIRME</a>
 						
@@ -513,13 +359,6 @@ $V = new Votacion();
 				<div class="img-1"></div>
 				<div class="text">
 					<h1>MATLAB</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(6);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Stacksocial</p>
@@ -560,32 +399,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="6" name="id" class="info1">
-							<input type="text" value="MATLAB" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.6" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.6">★</label><!--
-									  --><input  id="radio2.6" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.6">★</label><!--
-									  --><input  id="radio3.6" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.6">★</label><!--
-									  --><input  id="radio4.6" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.6">★</label><!--
-									  --><input  id="radio5.6" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.6">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://stacksocial.com/sales/the-complete-matlab-programming-certificationbundle?
 						
@@ -605,13 +424,6 @@ $V = new Votacion();
 				<div class="img-1"></div>
 				<div class="text">
 					<h1>C/C++</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(7);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Developer Bootcamp</p>
@@ -641,32 +453,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="7" name="id" class="info1">
-							<input type="text" value="C/C++" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.7" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.7">★</label><!--
-									  --><input  id="radio2.7" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.7">★</label><!--
-									  --><input  id="radio3.7" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.7">★</label><!--
-									  --><input  id="radio4.7" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.7">★</label><!--
-									  --><input  id="radio5.7" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.7">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.developer-bootcamp.com/c-programmer.htm" target="_blank">INSCRIBIRME</a>
 						
@@ -683,13 +475,6 @@ $V = new Votacion();
 				<div class="img-1"></div>
 				<div class="text">
 					<h1>Java</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(8);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Formadores IT</p>
@@ -710,34 +495,16 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="8" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.8" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.8">★</label><!--
-									  --><input  id="radio2.8" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.8">★</label><!--
-									  --><input  id="radio3.8" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.8">★</label><!--
-									  --><input  id="radio4.8" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.8">★</label><!--
-									  --><input  id="radio5.8" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.8">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
-						<a href="http://www.formadoresit.es/formacion-en-empresas/formacion/meanstack/bootcamps/java-javascript-landing/" target="_blank">INSCRIBIRME</a>
+						<a href="http://www.formadoresit.es/formacion-en-empresas/formacion/meanstack/
+						
+						bootcamps/java-javascript-landing/" target="_blank">INSCRIBIRME</a>
 						<br><br>
 						
 					</button>
@@ -751,13 +518,6 @@ $V = new Votacion();
 				<div class="img-1"></div>
 				<div class="text">
 					<h1>Python</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(9);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Coding Nomads</p>
@@ -784,32 +544,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="9" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.9" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.9">★</label><!--
-									  --><input  id="radio2.9" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.9">★</label><!--
-									  --><input  id="radio3.9" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.9">★</label><!--
-									  --><input  id="radio4.9" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.9">★</label><!--
-									  --><input  id="radio5.9" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.9">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://codingnomads.co/courses/python-bootcamp-online/" target="_blank">INSCRIBIRME</a>
 						
@@ -826,13 +566,6 @@ $V = new Votacion();
 				<div class="img-3"></div>
 				<div class="text">
 					<h1>Adobe illustrator</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(10);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Instituto Americano de Gráficos</p>
@@ -864,32 +597,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="10" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.10" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.10">★</label><!--
-									  --><input  id="radio2.10" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.10">★</label><!--
-									  --><input  id="radio3.10" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.10">★</label><!--
-									  --><input  id="radio4.10" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.10">★</label><!--
-									  --><input  id="radio5.10" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.10">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.agitraining.com/adobe/illustrator/classes/illustrator-bootcamp" target="_blank">INSCRIBIRME</a>
 						
@@ -906,13 +619,6 @@ $V = new Votacion();
 				<div class="img-3"></div>
 				<div class="text">
 					<h1>Adobe Photoshop</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(11);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Creative Live</p>
@@ -941,32 +647,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="11" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  <input  id="radio1.11" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.11">★</label><!--
-									  --><input  id="radio2.11" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.11">★</label><!--
-									  --><input  id="radio3.11" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.11">★</label><!--
-									  --><input  id="radio4.11" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.11">★</label><!--
-									  --><input  id="radio5.11" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.11">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.creativelive.com/class/adobe-photoshop-cc-bootcamp-blake-rudis" target="_blank">INSCRIBIRME</a>
 						
@@ -983,13 +669,6 @@ $V = new Votacion();
 				<div class="img-3"></div>
 				<div class="text">
 					<h1>Filmora Premiere</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(12);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Creatubers</p>
@@ -1014,32 +693,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="12" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									  	 <input  id="radio1.12" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.12">★</label><!--
-									  --><input   id="radio2.12" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.12">★</label><!--
-									  --><input   id="radio3.12" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.12">★</label><!--
-									  --><input   id="radio4.12" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.12">★</label><!--
-									  --><input   id="radio5.12" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.12">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://cutt.ly/0b3EWO7" target="_blank">INSCRIBIRME</a>
 						
@@ -1056,13 +715,6 @@ $V = new Votacion();
 				<div class="img-4"></div>				<div class="text">
 					<h1>Backend</h1>
 					<br>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(13);
-					?>
-					</div>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Lemoncode</p>
 					<br>
@@ -1084,32 +736,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="13" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input   id="radio1.13" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.13">★</label><!--
-									  --><input   id="radio2.13" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.13">★</label><!--
-									  --><input   id="radio3.13" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.13">★</label><!--
-									  --><input   id="radio4.13" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.13">★</label><!--
-									  --><input   id="radio5.13" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.13">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://lemoncode.net/bootcamp-backend#bootcamp-backend/docentes" target="_blank">INSCRIBIRME</a>
 						
@@ -1126,13 +758,6 @@ $V = new Votacion();
 				<div class="img-4"></div>
 				<div class="text">
 					<h1>Frontend</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(14);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Ironhack</p>
@@ -1164,33 +789,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.794565041354!2d-99.16531808561803!3d19.421280246076336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3746a2e079%3A0x422fa4858844d058!2sTonal%C3%A1%2010%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622589951595!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="14" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.14" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.14">★</label><!--
-									  --><input  id="radio2.14" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.14">★</label><!--
-									  --><input  id="radio3.14" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.14">★</label><!--
-									  --><input  id="radio4.14" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.14">★</label><!--
-									  --><input  id="radio5.14" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.14">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://www.ironhack.com/es/desarrollo-web" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -1206,13 +811,6 @@ $V = new Votacion();
 				<div class="img-4"></div>
 				<div class="text">
 					<h1>FullStack Madrid</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(15);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">SkyLab Codes Academy</p>
@@ -1246,33 +844,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.783589475123!2d-3.7037806851047583!3d40.43579066240487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228f50ac57657%3A0x60b00d2d2cd7971b!2sCalle%20de%20Viriato%2C%2020%2C%2028010%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2smx!4v1622590712917!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="15" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.15" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.15">★</label><!--
-									  --><input  id="radio2.15" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.15">★</label><!--
-									  --><input  id="radio3.15" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.15">★</label><!--
-									  --><input  id="radio4.15" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.15">★</label><!--
-									  --><input  id="radio5.15" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.15">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://www.skylabcoders.com/es/full-time-format-bootcamp-barcelona_5278" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -1288,13 +866,6 @@ $V = new Votacion();
 				<div class="img-4"></div>
 				<div class="text">
 					<h1>FullStack</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(16);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Udemy</p>
@@ -1329,32 +900,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="16" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.16" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.16">★</label><!--
-									  --><input  id="radio2.16" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.16">★</label><!--
-									  --><input  id="radio3.16" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.16">★</label><!--
-									  --><input  id="radio4.16" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.16">★</label><!--
-									  --><input  id="radio5.16" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.16">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.udemy.com/course/bootcamp-de-desarrollo-web/?utm_source=adwords&utm_medium=udemyads&utm_campaign=DSA-WebIndex_la.ES_cc.MX&utm_content=deal4584&utm_term=_._ag_124787779331_._ad_504973666492_._kw__._de_c_._dm__._pl__._ti_dsa-1052284100117_._li_9073830_._pd__._&matchtype=b&gclid=CjwKCAjw1uiEBhBzEiwAO9B_HSVyj00dY-_blk6X15LJwrsww9S5t1qxszXNqOvp1nozNHTBKj1l1RoCqpgQAvD_BwE" target="_blank">INSCRIBIRME</a>
 						
@@ -1371,13 +922,6 @@ $V = new Votacion();
 				<div class="img-4"></div>
 				<div class="text">
 					<h1>UX-UI</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(17);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">DEVF.LA</p>
@@ -1429,32 +973,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="17" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.17" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.17">★</label><!--
-									  --><input  id="radio2.17" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.17">★</label><!--
-									  --><input  id="radio3.17" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.17">★</label><!--
-									  --><input  id="radio4.17" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.17">★</label><!--
-									  --><input  id="radio5.17" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.17">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://devf.la/master/design/mx?utm_source=google&utm_medium=search&utm_term=curso%20de%20dise%C3%B1o%20ux&utm_campaign=Master+UX/UI+Gen+6&utm_source=adwords&utm_medium=ppc&hsa_acc=9274428682&hsa_cam=12702112993&hsa_grp=120015419189&hsa_ad=512949372888&hsa_src=g&hsa_tgt=kwd-304541476749&hsa_kw=curso%20de%20dise%C3%B1o%20ux&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw1uiEBhBzEiwAO9B_HR_Xx2WxXtSSD3H8qTbskvirufW2IeqgzSJ33dkgRbeC6URKWAhtZBoCjmwQAvD_BwE" target="_blank">INSCRIBIRME</a>
 						
@@ -1471,13 +995,6 @@ $V = new Votacion();
 				<div class="img-5"></div>
 				<div class="text">
 					<h1>Bootcamp intensivo de Ciberseguridad</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(18);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Ironhack</p>
@@ -1527,32 +1044,12 @@ $V = new Votacion();
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.794682184702!2d-99.16531808509349!3d19.421275186890668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3746a2e079%3A0x422fa4858844d058!2sTonal%C3%A1%2010%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622600811815!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="18" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.18" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.18">★</label><!--
-									  --><input  id="radio2.18" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.18">★</label><!--
-									  --><input  id="radio3.18" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.18">★</label><!--
-									  --><input  id="radio4.18" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.18">★</label><!--
-									  --><input  id="radio5.18" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.18">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.ironhack.com/es/ciberseguridad" target="_blank">INSCRIBIRME</a>
 						
@@ -1569,13 +1066,6 @@ $V = new Votacion();
 				<div class="img-5"></div>
 				<div class="text">
 					<h1>Bootcamp Online Ciberseguridad</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(19);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">GeeksHubs</p>
@@ -1614,32 +1104,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="19" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.19" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.19">★</label><!--
-									  --><input  id="radio2.19" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.19">★</label><!--
-									  --><input  id="radio3.19" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.19">★</label><!--
-									  --><input  id="radio4.19" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.19">★</label><!--
-									  --><input  id="radio5.19" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.19">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://bootcamp.geekshubsacademy.com/online/ciberseguridad/" target="_blank">INSCRIBIRME</a>
 						
@@ -1656,13 +1126,6 @@ $V = new Votacion();
 				<div class="img-5"></div>
 				<div class="text">
 					<h1>Cibersecurity Bootcamp</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(20);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">NEOLAND</p>
@@ -1708,32 +1171,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="20" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.20" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.20">★</label><!--
-									  --><input  id="radio2.20" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.20">★</label><!--
-									  --><input  id="radio3.20" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.20">★</label><!--
-									  --><input  id="radio4.20" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.20">★</label><!--
-									  --><input  id="radio5.20" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.20">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.neoland.es/cybersecurity-bootcamp?c=online" target="_blank">INSCRIBIRME</a>
 						
@@ -1750,13 +1193,6 @@ $V = new Votacion();
 				<div class="img-5"></div>
 				<div class="text">
 					<h1>Ciberseguridad 360</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(21);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Instituto Internacional De Seguridad Cibernética</p>
@@ -1817,32 +1253,12 @@ $V = new Votacion();
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.472896536404!2d-99.19312968509328!3d19.43516768688292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20200a407dc1b%3A0xcbcd423cfcdaef6f!2sTraveline.mx!5e0!3m2!1ses-419!2smx!4v1622602548709!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="21" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.21" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.21">★</label><!--
-									  --><input  id="radio2.21" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.21">★</label><!--
-									  --><input  id="radio3.21" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.21">★</label><!--
-									  --><input  id="radio4.21" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.21">★</label><!--
-									  --><input  id="radio5.21" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.21">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.iicybersecurity.com/ciberseguridad.html" target="_blank">INSCRIBIRME</a>
 						
@@ -1859,13 +1275,6 @@ $V = new Votacion();
 				<div class="img-5"></div>
 				<div class="text">
 					<h1>Fullstack Cibersecurity Bootcamp</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(22);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Keepcoding</p>
@@ -1905,32 +1314,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="22" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.22" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.22">★</label><!--
-									  --><input  id="radio2.22" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.22">★</label><!--
-									  --><input  id="radio3.22" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.22">★</label><!--
-									  --><input  id="radio4.22" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.22">★</label><!--
-									  --><input  id="radio5.22" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.22">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://keepcoding.io/nuestros-bootcamps/bootcamp-en-ciberseguridad/" target="_blank">INSCRIBIRME</a>
 						
@@ -1947,13 +1336,6 @@ $V = new Votacion();
 				<div class="img-6"></div>
 				<div class="text">
 					<h1>Inteligencia Artificial en línea</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(23);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Universidad Adolfo Ibañez</p>
@@ -1983,32 +1365,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="23" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.23" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.23">★</label><!--
-									  --><input  id="radio2.23" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.23">★</label><!--
-									  --><input  id="radio3.23" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.23">★</label><!--
-									  --><input  id="radio4.23" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.23">★</label><!--
-									  --><input  id="radio5.23" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.23">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://ingenieria.uai.cl/diplomado/diplomado-en-inteligencia-artificial/" target="_blank">INSCRIBIRME</a>
 						
@@ -2025,13 +1387,6 @@ $V = new Votacion();
 				<div class="img-6"></div>
 				<div class="text">
 					<h1>Diplomado en nteligencia Artificial</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(24);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">UVM</p>
@@ -2062,32 +1417,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="24" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.24" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.24">★</label><!--
-									  --><input  id="radio2.24" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.24">★</label><!--
-									  --><input  id="radio3.24" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.24">★</label><!--
-									  --><input  id="radio4.24" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.24">★</label><!--
-									  --><input  id="radio5.24" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.24">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href=" https://uvm.mx/oferta-academica/diplomados-certificaciones/tecnologia-y-sistemas-en-linea-diplomados-y-certificaciones/inteligencia-artificial-diploma-en-linea" target="_blank">INSCRIBIRME</a>
 						
@@ -2104,13 +1439,6 @@ $V = new Votacion();
 				<div class="img-6"></div>
 				<div class="text">
 					<h1>Inteligencia Artificial</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(25);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Instituto Artek</p>
@@ -2150,32 +1478,12 @@ $V = new Votacion();
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.0760295651185!2d-99.16489908561888!3d19.36586034783076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffbeb4235093%3A0xbe4ce3096afe2931!2sAv.%20Cuauht%C3%A9moc%201461%2C%20Sta%20Cruz%20Atoyac%2C%20Benito%20Ju%C3%A1rez%2C%2003310%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622606529463!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="25" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.25" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.25">★</label><!--
-									  --><input  id="radio2.25" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.25">★</label><!--
-									  --><input  id="radio3.25" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.25">★</label><!--
-									  --><input  id="radio4.25" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.25">★</label><!--
-									  --><input  id="radio5.25" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.25">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://www.educaweb.mx/curso/diplomado-inteligencia-artificial-distrito-federal-363090/" target="_blank">INSCRIBIRME</a>
 						
@@ -2192,13 +1500,6 @@ $V = new Votacion();
 				<div class="img-7"></div>
 				<div class="text">
 					<h1>Data analytics bootcamp</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(26);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Iron Hack</p>
@@ -2237,33 +1538,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.794565041354!2d-99.16531808561803!3d19.421280246076336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3746a2e079%3A0x422fa4858844d058!2sTonal%C3%A1%2010%2C%20Roma%20Nte.%2C%20Cuauht%C3%A9moc%2C%2006700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622607463738!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="26" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.26" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.26">★</label><!--
-									  --><input  id="radio2.26" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.26">★</label><!--
-									  --><input  id="radio3.26" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.26">★</label><!--
-									  --><input  id="radio4.26" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.26">★</label><!--
-									  --><input  id="radio5.26" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.26">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://www.ironhack.com/es/data-analytics" target="_blank">INSCRIBIRME</a>
 						
 					</button>	
@@ -2279,13 +1560,6 @@ $V = new Votacion();
 				<div class="img-7"></div>
 				<div class="text">
 					<h1>Data Analysis</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(27);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">BEDU</p>
@@ -2316,32 +1590,12 @@ $V = new Votacion();
 					<h2>Modalidad</h2>
 					<p>En línea</p>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="27" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.27" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.27">★</label><!--
-									  --><input  id="radio2.27" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.27">★</label><!--
-									  --><input  id="radio3.27" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.27">★</label><!--
-									  --><input  id="radio4.27" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.27">★</label><!--
-									  --><input  id="radio5.27" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.27">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://bedu.org/cursos/data-analysis/?utm_source=SEM&utm_medium=DataAnalysis&utm_campaign=cdmx_da&utm_source=adwords&utm_medium=ppc&utm_campaign=Leads+Data+Analysis&utm_term=curso%20analisis%20de%20datos&hsa_ver=3&hsa_mt=b&hsa_cam=9655535507&hsa_net=adwords&hsa_grp=102192179467&hsa_acc=3416616974&hsa_src=g&hsa_kw=curso%20analisis%20de%20datos&hsa_tgt=kwd-296484864906&hsa_ad=426499756226&gclid=CjwKCAjw7diEBhB-EiwAskVi16q-1VlgoQJ-OVMAJi_AGLik-UO-MODTU2CCxJFaQlbbg_5NMRnLyhoC7WIQAvD_BwE" target="_blank">INSCRIBIRME</a>
 						
@@ -2358,13 +1612,6 @@ $V = new Votacion();
 				<div class="img-7"></div>
 				<div class="text">
 					<h1>Data Analytics</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(28);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">IMMUNE Technology Institute</p>
@@ -2401,32 +1648,12 @@ $V = new Votacion();
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.151302845623!2d-3.693811385104298!3d40.44978806155307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4229189dbac4db%3A0x5400e56fb9abf5b1!2sIMMUNE%20Technology%20Institute!5e0!3m2!1ses-419!2smx!4v1622607991989!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="28" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.28" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.28">★</label><!--
-									  --><input  id="radio2.28" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.28">★</label><!--
-									  --><input  id="radio3.28" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.28">★</label><!--
-									  --><input  id="radio4.28" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.28">★</label><!--
-									  --><input  id="radio5.28" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.28">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
 					<button class="testbutton">
 						<a href="https://immune.institute/data-analytics/" target="_blank">INSCRIBIRME</a>
 						
@@ -2443,13 +1670,6 @@ $V = new Votacion();
 				<div class="img-8"></div>
 				<div class="text">
 					<h1>Architectura de nube</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(29);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Bootcamp Institute</p>
@@ -2474,33 +1694,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622609326745!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="29" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.29" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.29">★</label><!--
-									  --><input  id="radio2.29" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.29">★</label><!--
-									  --><input  id="radio3.29" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.29">★</label><!--
-									  --><input  id="radio4.29" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.29">★</label><!--
-									  --><input  id="radio5.29" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.29">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/bootcamp-cloud-architect-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -2516,13 +1716,6 @@ $V = new Votacion();
 				<div class="img-8"></div>
 				<div class="text">
 					<h1>Desarrolador de nube</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(30);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Bootcamp Iinstitute</p>
@@ -2547,33 +1740,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622609608996!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="30" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.30" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.30">★</label><!--
-									  --><input  id="radio2.30" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.30">★</label><!--
-									  --><input  id="radio3.30" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.30">★</label><!--
-									  --><input  id="radio4.30" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.30">★</label><!--
-									  --><input  id="radio5.30" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.30">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/cloud-developer-azure/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -2589,13 +1762,6 @@ $V = new Votacion();
 				<div class="img-8"></div>
 				<div class="text">
 					<h1>Especialista de seguridad de nube</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(31);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Bootcamp Institute</p>
@@ -2623,33 +1789,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622610145762!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="31" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.31" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.31">★</label><!--
-									  --><input  id="radio2.31" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.31">★</label><!--
-									  --><input  id="radio3.31" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.31">★</label><!--
-									  --><input  id="radio4.31" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.31">★</label><!--
-									  --><input  id="radio5.31" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.31">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/security-specialist-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>	
@@ -2665,13 +1811,6 @@ $V = new Votacion();
 				<div class="img-8"></div>
 				<div class="text">
 					<h1>Ingenieria de nube</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(32);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Bootcamp Institute</p>
@@ -2693,33 +1832,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622610445274!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="32" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.32" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.32">★</label><!--
-									  --><input  id="radio2.32" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.32">★</label><!--
-									  --><input  id="radio3.32" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.32">★</label><!--
-									  --><input  id="radio4.32" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.32">★</label><!--
-									  --><input  id="radio5.32" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.32">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/security-specialist-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -2735,13 +1854,6 @@ $V = new Votacion();
 				<div class="img-8"></div>
 				<div class="text">
 					<h1>Tecnologias aplicadas de nube</h1>
-					<div class="calificacion-global">
-					<?php
-						// Mostrar las estrellas
-						echo "Valoracion calculada con la calififación de los usuarios";
-						echo $V->mostrar_estrellitas_para(33);
-					?>
-					</div>
 					<br>
 					<h2>Empresa/Organización que lo imparte</h2>
 					<p class="tamano">Bootcamp Iinstitute</p>
@@ -2766,33 +1878,13 @@ $V = new Votacion();
 					<h2>Ubicación</h2>
 					<br>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.3372365222963!2d-99.17388188561846!3d19.39782974681925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6dbd8206fb%3A0x85504897333053ab!2sAv.%20Insurgentes%20Sur%20601%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1622610928037!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>					<br><br>
-					<div class="val_votacion">
-						<form action="php/agregar_calificacion.php" method="POST">
-							<h3>Tu opinion cuenta, dejamos tu valoración para este bootcamp</h3>
-							<input type="text" value="33" name="id" class="info1">
-							<input type="text" value="Arduino y Algunas Aplicaciones" name="boot" class="info1"> 
-							<div class="user_info">
-								<label for="names">
-									<p class="clasificacion">
-									     <input  id="radio1.33" type="radio" name="estrellas" value="5"><!--
-									  --><label for="radio1.33">★</label><!--
-									  --><input  id="radio2.33" type="radio" name="estrellas" value="4"><!--
-									  --><label for="radio2.33">★</label><!--
-									  --><input  id="radio3.33" type="radio" name="estrellas" value="3"><!--
-									  --><label for="radio3.33">★</label><!--
-									  --><input  id="radio4.33" type="radio" name="estrellas" value="2"><!--
-									  --><label for="radio4.33">★</label><!--
-									  --><input  id="radio5.33" type="radio" name="estrellas" value="1"><!--
-									  --><label for="radio5.33">★</label>
-									</p>
-								</label>
-							</div>
-							<br>
-							<button>ENVIAR CALIFICACION</button>
-							<BR></BR>
-						</form>
-					</div>	
-					<button class="testbutton">
+					<?php
+						// Mostrar las estrellas
+						echo "Valoracion calculada con la calififación de los usuarios";
+						echo $V->mostrar_estrellitas_para(1);
+					?>
+					<br><br>
+						<button class="testbutton">
 						<a href="https://bootcamp.institute/bootcamp-cloud-sre-aws/" target="_blank">INSCRIBIRME</a>
 						
 					</button>
@@ -2817,10 +1909,7 @@ $V = new Votacion();
 				<a href="#InteArti" class="category_item" category="InteArti">Inteligencia Artificial</a>
 				<a href="#Analist" class="category_item" category="Analist">Analista de Datos</a>
 				<a href="#Nube" class="category_item" category="Nube">Servicios de la Nube</a>
-				<div class="BTN-REG">
-					<a href="index.php" class="category_item" id ="regreso" category="Regreso">Regresar al Inicio</a>
-				</div>
-				
+				<a href="index.php" class="category_item" category="Regreso">Regresar al Inicio</a>
 			</div>
 			<section class="products-list">
 				<!--ARDUINO-->

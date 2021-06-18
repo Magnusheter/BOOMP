@@ -40,8 +40,8 @@
                 <br>
                 <select name="da_genero">
                     <option selected="true" disabled="disabled">Seleccione su género</option>
-                    <option value="hombre" required class="seleccion">Hombre</option>
-                    <option value="mujer" required class="seleccion">Mujer</option>
+                    <option value="Hombre" required class="seleccion">Hombre</option>
+                    <option value="Mujer" required class="seleccion">Mujer</option>
                 </select>
             </div>
             <div class="grupo"><h2>Edad</h2></div>

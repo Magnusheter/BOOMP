@@ -39,7 +39,7 @@ input{   /*Para escribir*/
 
 .bubbles{  /*Caja superior*/
     height: 240px;
-    background: url(../img/Circulo.png);
+    background: url(../img/fondop.jpg);
 }
 .photo{
     position:absolute;

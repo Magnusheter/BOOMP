@@ -7,11 +7,10 @@ class Votacion{
 
 	// Datos de acceso a la base de datos
 	private $host        = 'localhost';
-	private $usuario     = 'root';
-	private $clave       = 'root';
-	private $basededatos = 'boomp';
+	private $usuario     = 'id16803754_simulador';
+	private $clave       = 'Temporal2000';
+	private $basededatos = 'id16803754_boomp';
 	public  $db;
-
 	public function __construct(){
 		if(!isset($this->db)){
 			// Conectar a la base de datos    
@@ -87,8 +86,14 @@ class Votacion{
 		if( isset($_SESSION['elementos_votados']) ){
 
 			if( in_array($elemento_votado,$_SESSION['elementos_votados']) ){
-				echo 'Ya has votado';
+				
 				$puede_votar=false;
+
+				echo'<script type="text/javascript">
+				alert("Ya has votado por este bootcamp");
+				window.location.href="../categorias.php";
+				</script>';
+
 			}else{
 
 				// Agregar este elemento a la lista
@@ -101,8 +106,6 @@ class Votacion{
 			$_SESSION['elementos_votados']=array($elemento_votado);
 
 		}
-
-
 		// Si aún no ha votado, permitir que lo haga
 		if($puede_votar){
 			// Asegurar la variable para evitar ataques SQL
@@ -114,11 +117,15 @@ class Votacion{
 
 			// Comprobar si ha fallado la consulta
 			$result = $this->db->query($sql);
-			if($result) { 
-				echo 'Votación correcta';
-			}
+			
+			
+			echo'<script type="text/javascript">
+			alert("Gracias por su votacion");
+			window.location.href="../categorias.php";
+			</script>';
 		}
 	}
+	
  
 }
 
