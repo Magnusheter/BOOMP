@@ -39,19 +39,25 @@ input{   /*Para escribir*/
 
 .bubbles{  /*Caja superior*/
     height: 240px;
-    background: url(../img/Circulo.png);
+    background: url(../img/fondop.jpg);
 }
 .photo{
     position:absolute;
     top: 15px; 
     left: 225px; /*Izquierda*/
-    
     border: 5px solid white;
     border-radius: 50%;
+    background-color: aliceblue;
     height: 200px;  /*altura, tamaño foto*/
+    width: 200px;
     overflow: hidden;
 }
-
+.avatar
+{
+    height: 200px;  /*altura, tamaño foto*/
+    width: 200px;
+    border-radius: 50%;
+}
 header{
     height: 100px;
     background-color: white;
@@ -144,11 +150,11 @@ header{
 
 .botones_perfil
 {
-    font-size: 25px;
-    padding-left: 24%;
-    padding-right: 20%;
-    padding-bottom: 30px;
-    padding-top: 1%;
+    font-size: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .botones_perfil a
@@ -156,9 +162,13 @@ header{
     
     text-decoration: none;
     padding: 20px;
+    font-size: 20px;
     border-radius: 5px;
     background-color: darkblue;
     color: white;
+    margin-left: 15px;
+    
+
 }
 
 .botones_perfil .CS
@@ -170,6 +180,17 @@ header{
 {
     font-family: 'Oxygen', sans-serif;
 }
+
+header .bt-reg a
+{
+    border-radius: 2px;
+    background: url(../img/Circulo.png);
+    font-size: 12 px;
+    padding: 20px;
+    color: white;
+}
+
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

@@ -1,7 +1,6 @@
 <?php
 
-    $conexion = mysqli_connect("localhost","root","root","boomp");
-    
+$conexion = mysqli_connect("localhost","id16803754_simulador","Temporal2000@","id16803754_boomp");
 
     // if($conexion)
     // {

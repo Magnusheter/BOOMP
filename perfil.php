@@ -12,20 +12,18 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="bubbles"></div>  <!--Portada-->
-  
-    <div class="photo">
-      <img src="img/usuario.jpg" alt="" width="100%" height="100%">
-    </div>
-
-
-    <!-- Llamado a la BD para mostrar la hoja de vida -->
-    <?php
+<!-- Llamado a la BD para mostrar la hoja de vida -->
+<?php
+    session_start();
       include 'php/conexion_be.php';
-      $o_nombre="Mario";
-      $info_perfil = mysqli_query($conexion, "SELECT * FROM user_Data WHERE nombre = '$o_nombre'");
-      $info_perfil_usu = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usu_nombre = '$o_nombre'");
+      
+      $o_nombre=$_SESSION['usuario'];
+  //  $info_perfil = mysqli_query($conexion, "SELECT * FROM user_Data INNER JOIN usuario on user_Data.nombre=usuarios.usu_nombre WHERE usuarios.usu_correo = '$o_nombre'");
+      $info_perfil = mysqli_query($conexion, "SELECT * FROM user_data INNER JOIN usuarios on user_data.nombre = usuarios.usu_nombre WHERE usuarios.usu_correo = '$o_nombre'");
+      
+      $info_perfil_usu = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usu_correo = '$o_nombre'");
+      
+      
 
       // echo $o_nombre;
 
@@ -59,18 +57,32 @@
       $nivel = $valores['nivel_Estudios'];
       $carrera = $valores['carrera_A'];
       $institucion = $valores['institucion'];
+      $foto = $valores['foto'];
 
     ?>
+
+  <div class="container">
+    <div class="bubbles"></div>  <!--Portada-->
+  
+    <div class="photo">
+      <img class="avatar" src="php/<?php echo $foto; ?>" alt="">
+    </div>
+
+
+    
     <form action="php/da_perfil.php">
     <header>  <!--Caja Superior--> 
+        <div>
+          <a class="bt-reg" href="index.php">Inicio</a>
+        </div>
         <span class="form-group"><div class="quantity"><input type="text" name="pe_nombre"><span class="barra"></span></div></span>
         <div class="form-group-1">
           <?php echo $nombre." ".$app." ".$apm;?>
         </div>
     </header>                                <!--Caja Superior FIN-->
   
-    <div class="statscontainer">   <!----------- Caja inf ------------------>
-      <div class="statistics">
+    <!-- <div class="statscontainer">   --------- Caja inf ---------------- -->
+      <!-- <div class="statistics">
         <div class="quantity"><input type="text" name="tomados"><span class="barra"></span></div>
         <div class="units">Cursos tomados</div>
       </div>
@@ -83,8 +95,8 @@
       <div class="statistics">
         <div class="quantity"><input type="text" name="tomar"><span class="barra"></span></div>
         <div class="units">Cursos por tomar</div>
-      </div>
-    </div>   <!-----------------------------Caja inf FIN------------------------------>
+      </div> -->
+    <!-- </div>   ---------------------------Caja inf FIN---------------------------- -->
 
 
     <div class="statscontainer2"> <!--3ra caja, datos personales--> 
@@ -157,14 +169,14 @@
       Institución :  <?php echo $institucion;?>
       <div class="form-group"> <input type="text" name="instituto"><span class="barra"></span> </div>
     </div>
-  </form>
-  </div>
-      
+  </form> 
   <div class="botones_perfil">
-    <a href="">Modificar Informacion</a>
-    <a href="">Calificar Bootcamp</a>
-    <a href="" class="CS">Cerrar Sesion</a>
+    <a href="php/personalinf2.php">Modificar Informacion</a>
+    <a href="php/cerrar_sesion.php" class="CS">Cerrar Sesion</a>
   </div>
+   </div>
+      
+  
 
   <div class="attribution">
     Bootcamp: 

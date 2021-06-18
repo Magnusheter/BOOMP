@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +25,7 @@
                     <a href="#espec">Especialidades</a>
                     <a href="#servicios">Servicios</a>
                     <a href="#contacto">Contacto</a>
-                    <a href="login.html">Inicio de sesion</a>
+                    <a href="login.php">Usuarios</a>
                 </nav>
             </div>
         </section>
@@ -63,14 +67,14 @@
         </section>
         <section class="portafolio" id="espec">
             <div class="contenedor">
-                <a href="categorias.html"><h2 class="titulo">Especialidades</h2></a>
+                <a href="categorias.php"><h2 class="titulo">Especialidades</h2></a>
                 <div class="galeria-port">
                     <div class="imagen-port">
                         <img src="img/img1.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono2.png" alt="">
                             <br>
-                            <a href="categorias.html"></a><p>Ciberseguridad</p></a>
+                            <a href="categorias.php#Programacion"><p>Ciberseguridad</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
@@ -78,49 +82,49 @@
                         <div class="hover-galeria">
                             <img src="img/icono4.png" alt="">
                             <br>
-                            <a href="categorias.html"><p>Programación</p></a>
+                            <a href="categorias.php#Programacion"><p>Programación</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img3.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono3.png" alt="">
-                            <br><a href="categorias.html"><p>Diseño Web</p></a>
+                            <br><a href="categorias.php"><p>Diseño Web</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img4.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono5.png" alt="">
-                            <br><a href="categorias.html"><p>Diseño/Animación</p></a>
+                            <br><a href="categorias.php"><p>Diseño/Animación</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img5.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono6.png" alt="">
-                            <br><a href="categorias.html"><p>Arduino</p></a>
+                            <br><a href="categorias.php"><p>Arduino</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img6.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono7.png" alt="">
-                            <br><a href="categorias.html"><p>Servicios de la Nube</p></a>
+                            <br><a href="categorias.php"><p>Servicios de la Nube</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img7.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono8.png" alt="">
-                            <br><a href="categorias.html"><p>Analista de Datos</p></a>
+                            <br><a href="categorias.php"><p>Analista de Datos</p></a>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img8.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono9.png" alt="">
-                            <br><a href="categorias.html"><p>Inteligencia Artificial</p></a>
+                            <br><a href="categorias.php"><p>Inteligencia Artificial</p></a>
                         </div>
                     </div>
                 </div>
@@ -184,9 +188,11 @@
             <div class="content-foo">
                 <h4>Instagram</h4>
                 <p>boomp.oficial</p>
+                <a href="php/cerrar_sesion.php">...</a>
             </div>
         </div>
         <h2 class="titulo-final">&copy; LOS SIMULADORES</h2>
+        
     </footer>
 </body>
 

@@ -1,5 +1,16 @@
-
-
+<?php
+	session_start();
+    if(isset($_SESSION['usuario'])==true)
+    {
+        header("location: perfil.php");
+        
+        exit();
+    }
+    else
+    {
+        session_destroy();
+    }
+?>
 
 <!DOCTYPE html>
 <!--
@@ -135,7 +146,7 @@ and open the template in the editor.
     <div id="main-div">
       <div class="container">
         <div class="child">
-            <a href="index.html"><img src="img/LOGO V4.PNG"  alt="Inicio" class="logo"></a>
+            <a href="index.php"><img src="img/LOGO V4.PNG"  alt="Inicio" class="logo"></a>
             <br><br><h1>INICIO DE SESIÓN</h1>
             <form action="php/login_usuario.php" class="form-login" method="POST">
                 <div class="form-group">
@@ -155,7 +166,7 @@ and open the template in the editor.
             <div class="Registro">
             <br>
             ¿No tienes una cuenta?
-            <button type="button" class="btn-dark" onclick="window.location='registro.html'">Registrate</button>
+            <button type="button" class="btn-dark" onclick="window.location='registro.php'">Registrate</button>
 
             
 

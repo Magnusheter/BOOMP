@@ -12,16 +12,19 @@
     <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-    <form action="php/reg_data_usuario.php" id="form" method="POST">
+    <form action="php/reg_data_usuario.php" id="form" method="POST" enctype="multipart/form-data">
         <div class="form">
             <div>
-                <img src="img/og/logo_completo2.png" class="logo">
+                <div class="logo-div">
+                    <a href="login.php"><img src="img/LOGO V4.PNG"  alt="Inicio" class="logo"></a>
+
+                </div>
                 <h1><br>Datos Personales</h1>
             </div>
             <div class="grupo">
                 <h2>Foto de perfil</h2>
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="200" alt="img" class="avatar">
-                <input type="file" onchange="previewFile()" class="button" id="insertar"><br>
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="200" width="200"  alt="img" class="avatar">
+                <input type="file" onchange="previewFile()" class="button" id="insertar" name="da_foto"><br>
             </div>
             <div class="grupo">
                 <input type="text" id="name" name="da_nombre" required placeholder="Nombre"><span class="barra"></span>
@@ -37,8 +40,8 @@
                 <br>
                 <select name="da_genero">
                     <option selected="true" disabled="disabled">Seleccione su género</option>
-                    <option value="hombre" required class="seleccion">Hombre</option>
-                    <option value="mujer" required class="seleccion">Mujer</option>
+                    <option value="Hombre" required class="seleccion">Hombre</option>
+                    <option value="Mujer" required class="seleccion">Mujer</option>
                 </select>
             </div>
             <div class="grupo"><h2>Edad</h2></div>

@@ -310,6 +310,21 @@ body{  /*Fondo*/
   {
 	font-size: 14px;
   }
+
+.estrellas 
+{
+	text-shadow: 0 0 1px #F48F0A; cursor: pointer;  
+}
+.estrella_dorada 
+{ 
+	color: gold; 
+}
+.estrella_normal
+{ 
+	color: black; 
+}
+
+
 /* RESPONSIVE */
 
 @media screen and (max-width: 1100px){
@@ -317,6 +332,8 @@ body{  /*Fondo*/
 		width: 30.3%;
 	}
 }
+
+
 
 @media screen and (max-width: 900px){
 	.category_list,

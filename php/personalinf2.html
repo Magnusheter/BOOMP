@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicons/favicon-32x32.png" type="image/x-icon">
+    <title>Registro | Datos Personales </title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilospersonalinf.css">
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+
+    <!-- Espacio dedica a recuperar la informacion del usuario
+        <!-- Llamado a la BD para mostrar la hoja de vida -->
+<?php
+session_start();
+  include 'conexion_be.php';
+  
+  $o_nombre=$_SESSION['usuario'];
+//  $info_perfil = mysqli_query($conexion, "SELECT * FROM user_Data INNER JOIN usuario on user_Data.nombre=usuarios.usu_nombre WHERE usuarios.usu_correo = '$o_nombre'");
+  $info_perfil = mysqli_query($conexion, "SELECT * FROM user_data INNER JOIN usuarios on user_data.nombre = usuarios.usu_nombre WHERE usuarios.usu_correo = '$o_nombre'");
+  
+  $info_perfil_usu = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usu_correo = '$o_nombre'");
+  
+  
+
+  // echo $o_nombre;
+
+  // if($info_perfil)
+  // {
+  //     echo"Conculta exitosa";
+      
+  //     echo $estado_o;
+  // }
+  // else{
+  //     echo"Añlgo salio mal";
+  // }
+
+
+
+  $valores = mysqli_fetch_array($info_perfil);
+  $valores_usu = mysqli_fetch_array($info_perfil_usu);
+  $nombre = $valores['nombre'];
+  $nombre2=$valores['nombre'];
+  $app = $valores['apellido_P'];
+  $apm = $valores['apellido_M'];
+  $correo = $valores_usu['usu_correo'];
+  $genero = $valores['genero'];
+  $edad = $valores['edad'];
+  $calle = $valores['calle'];
+  $colonia = $valores['colonia'];
+  $nint = $valores['numero_int'];
+  $next = $valores['numero_ext'];
+  $estado = $valores['estado'];
+  $municipio = $valores['municipio'];
+  $cp = $valores['codigo_Postal'];
+  $nivel = $valores['nivel_Estudios'];
+  $carrera = $valores['carrera_A'];
+  $institucion = $valores['institucion'];
+  $foto = $valores['foto'];
+  $foto2 = $valores['foto'];
+
+?>
+    
+
+
+
+    <form action="" id="form" method="POST" enctype="multipart/form-data">
+        <div class="form">
+            <div>
+                <div class="logo-div">
+                    <a href=""><img src="../img/LOGO V4.PNG"  alt="Inicio" class="logo"></a>
+
+                </div>
+                <h1><br>Modificación de datos personales</h1>
+            </div>
+            <div class="grupo">
+                <h2>Foto de perfil</h2>
+                
+                
+                <img src="<?php echo $foto; ?>" height="200" width="200"  alt="img" class="avatar">
+                <input type="file" onchange="previewFile()" class="button" id="insertar" name="da_foto"><br>
+            </div>
+            <div class="grupo" id="l-1">
+                <input type="text" id="name" name="da_nombre" disabled required placeholder="Nombre" value="<?php echo $nombre; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="lastname" name="da_app" required placeholder="Apellido Paterno" value="<?php echo $app; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="lastname" name="da_apm" required placeholder="Apellido Materno" value="<?php echo $apm; ?>"><span class="barra"></span>
+            </div>
+            <div class="lista">
+                <h2>Género</h2>
+                <br>
+                <select name="da_genero">
+                    <option selected="true" disabled="disabled">Seleccione su género</option>
+                    <option value="Hombre" required class="seleccion"  <?php if($genero=="Hombre") {echo'selected';} ?>>Hombre</option>
+                    <option value="Mujer" required class="seleccion"  <?php if($genero=="Mujer") {echo'selected';} ?>>Mujer</option>
+                    <?php echo $genero;?>
+                </select>
+            </div>
+            <div class="grupo"><h2>Edad</h2></div>
+            <div class="grupo">
+                <input type="range" name="da_edad" value="<?php echo $edad; ?>" min="15" max="81" oninput="this.nextElementSibling.value = this.value">
+                <output><?php echo $edad; ?></output>
+            </div>
+            <div class="grupo"><h2>Dirección</h2></div>
+            <div class="grupo">
+                <input type="text" name="da_calle" id="calle" required placeholder="Calle" value="<?php echo $calle; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="numeroint" name="da_ni" placeholder="Número Interno" value="<?php echo $nint; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="numeroext" name="da_ne" required placeholder="Número Externo" value="<?php echo $next; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="colonia" name="da_colonia" required placeholder="Colonia" value="<?php echo $colonia; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="estado" name="da_estado" required placeholder="Estado" value="<?php echo $estado; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="municipio" name="da_municipio" required placeholder="Municipio" value="<?php echo $municipio; ?>"><span class="barra"></span>
+            </div>
+            <div class="grupo">
+                <input type="text" id="cp" name="da_cp" required placeholder="Código Postal" value="<?php echo $cp; ?>"><span class="barra"></span>
+            </div>
+            <div class="lista">
+                <h2>Nivel de Estudios</h2>
+                <br>
+                <p>Tu nivel de estudios -> <?php echo $nivel;?></p>
+                <br>
+                <select name="da_nivel" value="Media Superior">
+                    <option selected="true"  disabled="disabled">Seleccione su nivel máximo de estudios</option>
+                    <option value="Media Superior" required <?php if($nivel=="Media Superior") {echo'selected';} ?>>Media Superior</option>
+                    <option value="Egresado" required <?php if($nivel=="Egresado") {echo'selected';} ?>>Egresado</option>
+                    <option value="Superior" required <?php if($nivel=="Superior") {echo'selected';} ?>>Superior</option>
+                </select>
+            </div>
+            <div class="lista">
+
+                
+                <h2>Carrera</h2>
+                <br>
+                <p>Tu carrera -> <?php echo $carrera;?></p>
+                <br>
+                <select require name="da_carrera">
+                    <option selected="true"  disabled="disabled">Seleccione su carrera</option>
+                    <option value="Tronco Comun" required <?php if($carrera=="Tronco Comun") {echo'selected';} ?>>Tronco Común</option>
+                    <option value="Sistemas" required <?php if($carrera=="Sistemas") {echo'selected';} ?>>Ingenieria en Sistemas Computacionales</option>
+                    <option value="Telecomunicaciones" required <?php if($carrera=="Telecomunicaciones") {echo'selected';} ?>>Ingenieria en Telecomunicaciones</option>
+                    <option value="Telematica" required <?php if($carrera=="Telematica") {echo'selected';} ?>>Ingenieria Telematica</option>
+                    <option value="Mecatronica" required <?php if($carrera=="Mecatronica") {echo'selected';} ?>>Ingenieria Mecatronica</option>
+                    <option value="Software" required <?php if($carrera=="Software") {echo'selected';} ?>>Ingenieria en Software</option>
+                    <option value="Otra" required <?php if($carrera=="Otra") {echo'selected';} ?>>Otra</option>
+                </select>
+            </div>
+            <div class="grupo"><h2>Institución</h2></div>
+            <div class="grupo">
+                <input type="text" name="da_escuela" id="escuela" required placeholder="Nombre de tu institución o última institución (en caso de ser egresado" value="<?php echo $institucion; ?>"><span class="barra"></span>
+            </div>
+            <button type="submit" name="actualizar">Enviar</button>
+        </div>
+    </form>
+    <script src="main.js"></script>
+
+    <?php
+        if(isset($_POST['actualizar']))
+        {
+            $mo_nombre =$nombre2;
+            $mo_app =$_POST['da_app'];
+            $mo_apm =$_POST['da_apm'];
+            $mo_genero =$_POST['da_genero'];
+            $mo_edad =$_POST['da_edad'];
+            $mo_calle =$_POST['da_calle'];
+            $mo_ni =$_POST['da_ni'];
+            $mo_ne =$_POST['da_ne'];
+            $mo_colonia =$_POST['da_colonia'];
+            $mo_estado =$_POST['da_estado'];
+            $mo_municipio =$_POST['da_municipio'];
+            $mo_cp =$_POST['da_cp'];
+            $mo_nivel =$_POST['da_nivel'];
+            $mo_carrera =$_POST['da_carrera'];
+            $mo_escuela =$_POST['da_escuela'];
+            $mo_foto =$_POST['da_foto'];
+                
+                $foto = $_FILES['da_foto'];
+                $tmp_name = $foto['tmp_name'];
+                $directorio_destino = "perfiles";
+                $img_file = $foto['name'];
+                $img_type = $foto['type'];
+
+                if (((strpos($img_type, "gif") || strpos($img_type, "jpeg") ||
+                    strpos($img_type, "jpg")) || strpos($img_type, "png")))
+                {
+                    //¿Tenemos permisos para subir la imágen?
+                    $destino = $directorio_destino . '/' .  $img_file;
+                    move_uploaded_file($tmp_name, $destino);
+                    
+                }
+                else
+                {
+                    echo'
+                    <script>
+                        alert("Error al cargar el tipo de archivo, verifique que sea, gif,jpeg,jpg,png");
+                    </script>
+                    window.location= "../personalinf.php"
+                    ';
+                }
+                
+        
+        
+            //Variable para enviar fotografia
+            
+
+            
+            $modificar= mysqli_query($conexion,"UPDATE user_Data SET
+            apellido_P='$mo_app',
+            apellido_M='$mo_apm',
+            genero='$mo_genero',
+            edad='$mo_edad',
+            calle='$mo_calle',
+            numero_int='$mo_ni',
+            numero_ext='$mo_ne',
+            colonia='$mo_colonia',
+            estado='$mo_estado',
+            municipio='$mo_municipio',
+            codigo_Postal='$mo_cp',
+            nivel_Estudios='$mo_nivel',
+            carrera_A='$mo_carrera',
+            institucion='$mo_escuela',
+            foto='$destino'
+            WHERE nombre = '$mo_nombre'");
+
+            if($modificar)
+            {
+                echo'
+                    <script type="text/javascript">
+                    alert("Informacion actualizada con exito");
+                    window.location.href="../perfil.php";
+                    </script>';
+                    
+            }
+            else
+            {
+                echo'
+                    <script type="text/javascript">
+                    alert("Intentalo nuevamente");
+                    window.location.href="personalinf2.php";
+                    </script>';
+            }
+
+        }
+    ?>
+
+</body>
+</html>
